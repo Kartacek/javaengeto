@@ -8,7 +8,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
-public class ListStates {
+public class ListStates  {
 
     //List<InfoStates> listStates = new ArrayList<>();
     List<InfoStates> listStates = new ArrayList<>();
@@ -52,6 +52,27 @@ public class ListStates {
 
 
         }
+    }
+    public void getStates20Sort(){
+        Collections.sort(listStates);
+        for (InfoStates state:listStates) {
+            int number = 20;
+            if (state.getTax()> number && !state.getSpecialtax()){
+                System.out.println(state.getInfoStates());
+            }
+
+        }
+        System.out.println("====================");
+        System.out.print("Sazba VAT 20 % nebo nižší nebo používají speciální sazbu: ");
+        for (InfoStates state:listStates) {
+            int number1 = 20;
+            if (state.getSpecialtax() == true || state.getTax() <= number1 ){
+                System.out.print(state.getShortcut() + ",");
+
+            }
+
+        }
+        //System.out.println("----------");
     }
 
 

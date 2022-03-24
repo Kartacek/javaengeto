@@ -2,7 +2,7 @@ package com.engeto.ProjectTax;
 
 import java.math.BigDecimal;
 
-public class InfoStates  {
+public class InfoStates implements Comparable<InfoStates> {
      private String shortcut;
      private String name;
      private Double tax;
@@ -69,6 +69,14 @@ public class InfoStates  {
                   ", reductiontax=" + reductiontax +
                   ", specialtax=" + specialtax +
                   '}';
+     }
+     @Override
+     public int compareTo(InfoStates o) {
+          if(this.getTax() == o.getTax()) return 0;
+
+          else if (this.getTax() > o.getTax()) return -1;
+
+          else return 1;
      }
 
 

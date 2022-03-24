@@ -21,6 +21,10 @@ public class Main {
 
         System.out.println("----------------");
 
+        /*ukol3*/
+        listStates.getStates20Sort();
+
+
 
 
     }
