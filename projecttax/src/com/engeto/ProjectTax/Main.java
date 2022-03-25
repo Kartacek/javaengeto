@@ -24,6 +24,24 @@ public class Main {
         /*ukol3*/
         listStates.getStates20Sort();
 
+        System.out.println("----------------");
+        /*ukol4,5,6*/
+        try {
+            listStates.savetofile("vat-over-20.txt");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        System.out.println("ukoly 4,5,6 probehly");
+
+        System.out.println("----------------");
+        /*ukol7*/
+
+        try {
+            listStates.savestofile2();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
 
 
 

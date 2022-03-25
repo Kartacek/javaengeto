@@ -74,6 +74,56 @@ public class ListStates  {
         }
         //System.out.println("----------");
     }
+    public void savetofile(String Filename) throws Exception{
+        try(PrintWriter writer = new PrintWriter(new FileWriter(Filename))) {
+            Collections.sort(listStates);
+            for (InfoStates state:listStates) {
+                int number = 20;
+                if (state.getTax()> number && !state.getSpecialtax()){
+                    writer.println(state.getInfoStates());
+
+                }
+
+            }
+            writer.println("====================");
+            writer.print("Sazba VAT 20 % nebo nižší nebo používají speciální sazbu: ");
+            for (InfoStates state:listStates) {
+                int number1 = 20;
+                if (state.getSpecialtax() == true || state.getTax() <= number1 ){
+                    writer.print(state.getShortcut() + ",");
+
+                }
+            }
+
+        }
+    }
+    public void savestofile2() throws Exception{
+        System.out.println("ZADEJ CISLO:");
+        int number3 =  (int) Support.safeReadInt();
+        try(PrintWriter writer = new PrintWriter(new FileWriter(number3+".txt"))){
+            for (InfoStates state:listStates) {
+                if (number3 <state.getTax()){
+                    System.out.println(state.getInfoStates());
+                }
+            }
+            for (InfoStates state:listStates) {
+                if (number3 <state.getTax()){
+                    writer.println(state.getInfoStates());
+                }
+            }
+            writer.println("====================");
+            writer.print("Sazba VAT "+number3+" % nebo nižší: ");
+            for (InfoStates state:listStates) {
+                //int number1 = number3;
+                if (state.getTax() <= number3 ){
+                    writer.print(state.getShortcut() + ",");
+
+                }
+            }
+
+        }
+    }
+
 
 
 
