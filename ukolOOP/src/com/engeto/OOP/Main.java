@@ -18,11 +18,12 @@ public class Main {
 
     Classroom classroom = new Classroom("4.C",4,""+teacher);
     List<Student> listOfStudent = new ArrayList<>();
+
     listOfStudent.add(student1);
+
     listOfStudent.add(student2);
+
     listOfStudent.add(student3);
-
-
 
 
         System.out.println("####################################");
@@ -32,8 +33,11 @@ public class Main {
         System.out.println("Počet studentů: "+listOfStudent.size());
         System.out.println("####################################");
         for (Student e : listOfStudent) {
-            System.out.println("# "+listOfStudent.indexOf(e)+" # ID"+e.getID()+" - "+e.getName()+" "+e.getSurname()+" ("+e.getBorn()+")");
+            int h = listOfStudent.indexOf(e);
+            h = h + 1;
+            System.out.println("# "+h+" # ID"+e.getID()+" - "+e.getName()+" "+e.getSurname()+" ("+e.getBorn()+")");
         }
+
 
 
 
