@@ -27,4 +27,13 @@ public class Student extends Teacher {
     public void setID(int ID) {
         this.ID = ID;
     }
+
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "born=" + born +
+                ", ID=" + ID +
+                '}';
+    }
 }

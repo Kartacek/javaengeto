@@ -8,7 +8,7 @@ public class Classroom {
     private int year;
     private String classteacher;
 
-    List<Student> listOfStudent = new ArrayList<>();
+
 
 
     public Classroom(String name, int year, String classteacher) {
@@ -41,11 +41,20 @@ public class Classroom {
         this.classteacher = classteacher;
     }
 
+    public void getDescription(){
+        System.out.println("Třída: "+ getName()+" (ročník: "+ getYear()+")");
 
+    }
+    public void getTeacher(String x , String y){
+        System.out.println("Třídní učitel: "+x+","+y);
+    }
 
-
-
-
-
-
+    @Override
+    public String toString() {
+        return "Classroom{" +
+                "name='" + name + '\'' +
+                ", year=" + year +
+                ", classteacher='" + classteacher + '\'' +
+                '}';
+    }
 }

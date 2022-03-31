@@ -2,6 +2,7 @@ package com.engeto.OOP;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
 
@@ -16,6 +17,29 @@ public class Main {
     Student student3 = new Student("Jindřich","Nový",2012,345);
 
     Classroom classroom = new Classroom("4.C",4,""+teacher);
+    List<Student> listOfStudent = new ArrayList<>();
+    listOfStudent.add(student1);
+    listOfStudent.add(student2);
+    listOfStudent.add(student3);
+
+
+
+
+        System.out.println("####################################");
+        classroom.getDescription();
+        System.out.println("Třídní učitel: "+teacher.getSurname()+", "+teacher.getName());
+
+        System.out.println("Počet studentů: "+listOfStudent.size());
+        System.out.println("####################################");
+        for (Student e : listOfStudent) {
+            System.out.println("# "+listOfStudent.indexOf(e)+" # ID"+e.getID()+" - "+e.getName()+" "+e.getSurname()+" ("+e.getBorn()+")");
+        }
+
+
+
+
+
+
 
 
 

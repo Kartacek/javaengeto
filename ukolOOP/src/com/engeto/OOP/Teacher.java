@@ -24,4 +24,13 @@ public class Teacher {
     public void setSurname(String surname) {
         this.surname = surname;
     }
+
+
+    @Override
+    public String toString() {
+        return "Teacher{" +
+                "name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                '}';
+    }
 }
