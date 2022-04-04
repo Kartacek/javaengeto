@@ -1,5 +1,6 @@
 package com.engeto.OOP;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -33,12 +34,12 @@ public class Main {
         System.out.println("Počet studentů: "+listOfStudent.size());
         System.out.println("####################################");
         for (Student e : listOfStudent) {
-            int h = listOfStudent.indexOf(e);
-            h = h + 1;
+            int h = listOfStudent.indexOf(e) + 1;
             System.out.println("# "+h+" # ID"+e.getID()+" - "+e.getName()+" "+e.getSurname()+" ("+e.getBorn()+")");
         }
 
 
+        BigDecimal n;
 
 
 
