@@ -1,5 +1,7 @@
 package com.engeto.OOP;
 
+import java.io.FileWriter;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -45,9 +47,12 @@ public class Classroom {
         System.out.println("Třída: "+ getName()+" (ročník: "+ getYear()+")");
 
     }
+
+
     public void getTeacher(String x , String y){
         System.out.println("Třídní učitel: "+x+","+y);
     }
+
 
     @Override
     public String toString() {
@@ -57,4 +62,6 @@ public class Classroom {
                 ", classteacher='" + classteacher + '\'' +
                 '}';
     }
+
 }
+

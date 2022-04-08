@@ -1,5 +1,7 @@
 package com.engeto.OOP;
 
+import java.io.FileWriter;
+import java.io.PrintWriter;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -7,8 +9,8 @@ import java.util.List;
 
 public class Main {
 
-    public static void main(String[] args) {
-	    System.out.println("ahoj");
+    public static void main(String[] args) throws Exception {
+
 
 
     Teacher teacher = new Teacher("Jan","Novák");
@@ -38,10 +40,28 @@ public class Main {
             System.out.println("# "+h+" # ID"+e.getID()+" - "+e.getName()+" "+e.getSurname()+" ("+e.getBorn()+")");
         }
 
+        System.out.println("####################################");
 
-        BigDecimal n;
+
+        System.out.println(classroom.getName()+", "+teacher.getName()+" "+teacher.getSurname());
+        System.out.println("ID"+student1.getID()+", "+student1.getName()+" "+student1.getSurname());
+        System.out.println("ID"+student2.getID()+", "+student2.getName()+" "+student2.getSurname());
+        System.out.println("ID"+student3.getID()+", "+student3.getName()+" "+student3.getSurname());
 
 
+        PrintWriter out = new PrintWriter("class.txt");
+
+
+        out.println("Třídní učitel: "+teacher.getSurname()+", "+teacher.getName());
+        out.println("Počet studentů: "+listOfStudent.size());
+
+        for (Student e : listOfStudent) {
+            int h = listOfStudent.indexOf(e) + 1;
+            out.println("# "+h+" # ID"+e.getID()+" - "+e.getName()+" "+e.getSurname()+" ("+e.getBorn()+")");
+        }
+
+
+        out.close();
 
 
 
@@ -53,7 +73,9 @@ public class Main {
 
     }
 
+    }
 
 
 
-}
+
+

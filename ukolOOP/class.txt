@@ -1,0 +1,5 @@
+Třídní učitel: Novák, Jan
+Počet studentů: 3
+# 1 # ID1 - Petr Svoboda (2011)
+# 2 # ID123 - Milan Říha (2010)
+# 3 # ID345 - Jindřich Nový (2012)
