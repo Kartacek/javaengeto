@@ -12,8 +12,8 @@ public class ListPlants {
 
     List<InfoPlans> listPlant = new ArrayList<>();
 
-    public void loadFromFile(String filename, String delimiter) {
-        try(Scanner s = new Scanner(new BufferedReader(new FileReader(filename)));) {
+    public void loadFromFile(String filename, String delimiter) throws PlantException {
+        try(Scanner s = new Scanner(new BufferedReader(new FileReader (filename)))) {
             while (s.hasNextLine()) {
                 String inputLine = s.nextLine();
                 String[] parts = inputLine.split(delimiter);
@@ -30,13 +30,14 @@ public class ListPlants {
 
 
             }
-        } catch (IOException e){
-            e.printStackTrace();
+        } catch (FileNotFoundException e){
+            throw new PlantException("špatný vstupní soubor");
+
         }
 
     }
 
-    public void saveToFile(String inputFilename, String delimiter) {
+    public void saveToFile(String inputFilename, String delimiter) throws PlantException {
         try(PrintWriter writer = new PrintWriter(new FileWriter(inputFilename))) {
             for (InfoPlans listPlants : listPlant) {
                 String outputLine = listPlants.getName().toString()+delimiter;
@@ -47,7 +48,7 @@ public class ListPlants {
                 writer.println(outputLine);
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new PlantException("ngn");
         }
      }
 

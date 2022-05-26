@@ -14,7 +14,11 @@ public class Main {
 
 
         ListPlants listPlants = new ListPlants();
-        listPlants.loadFromFile("plants.txt", "\t");
+        try {
+            listPlants.loadFromFile("plants.txt", "\t");
+        } catch (PlantException e) {
+            System.err.println("chyba");
+        }
         listPlants.addPlant(plant1);
         listPlants.addPlant(plant2);
         listPlants.addPlant(plant3);
@@ -25,8 +29,11 @@ public class Main {
         }
 
 
-
-        listPlants.saveToFile("plants1.txt","\t");
+        try {
+            listPlants.saveToFile("plants1.txt","\t");
+        } catch (PlantException e) {
+            System.err.println("chyba");
+        }
 
     }
 }
