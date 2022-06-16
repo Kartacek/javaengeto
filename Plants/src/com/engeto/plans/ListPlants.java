@@ -31,7 +31,7 @@ public class ListPlants {
 
             }
         } catch (FileNotFoundException e){
-            throw new PlantException("špatný vstupní soubor");
+            throw new PlantException("špatný vstupní soubor"+e.getLocalizedMessage());
 
         }
 

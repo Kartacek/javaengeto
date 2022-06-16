@@ -17,7 +17,7 @@ public class Main {
         try {
             listPlants.loadFromFile("plants.txt", "\t");
         } catch (PlantException e) {
-            System.err.println("chyba");
+            System.err.println("chyba"+e.getLocalizedMessage());
         }
         listPlants.addPlant(plant1);
         listPlants.addPlant(plant2);
@@ -32,7 +32,7 @@ public class Main {
         try {
             listPlants.saveToFile("plants1.txt","\t");
         } catch (PlantException e) {
-            System.err.println("chyba");
+            System.err.println("chyba"+e.getLocalizedMessage());
         }
 
     }

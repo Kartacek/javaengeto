@@ -43,12 +43,6 @@ public class InfoPlans {
     }
 
 
-
-
-
-
-
-
     public String getName() {
         return name;
     }
@@ -77,7 +71,9 @@ public class InfoPlans {
         return watering;
     }
 
-    public void setWatering(LocalDate watering) {
+    public void setWatering(LocalDate watering) throws PlantException{
+        LocalDate planted = getPlanted();
+        if (watering.isBefore(planted)) throw  new PlantException("Datum posledni zalivky "+watering+" nemuze byt starsi nez datum zasazeni rostliny "+planted);
         this.watering = watering;
     }
 
@@ -85,7 +81,8 @@ public class InfoPlans {
         return frequencyOfWateringInDays;
     }
 
-    public void setFrequencyOfWateringInDays(int frequencyOfWateringInDays) {
+    public void setFrequencyOfWateringInDays(int frequencyOfWateringInDays) throws PlantException{
+        if (frequencyOfWateringInDays <= 0) throw new PlantException("Frekvence nemuze byt zaporna");
         this.frequencyOfWateringInDays = frequencyOfWateringInDays;
     }
 
